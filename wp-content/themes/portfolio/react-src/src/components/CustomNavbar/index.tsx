@@ -1,5 +1,5 @@
 import React from 'react'
-import {Navbar} from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import './style.scss'
 import { Container } from 'react-bootstrap';
 
@@ -24,8 +24,12 @@ class CustomNavbar extends React.Component {
           }>
             <Container>
               <Navbar.Brand href="#home">
-                <p>ROLIK</p>
+                <img width={50} height={50} className="logo-invert" src={require('./logo.svg')} alt=""/>
+                <span className="rest-of-name">
+                  OLIK
+                </span>
               </Navbar.Brand>
+              <Nav.Link href="#home">Home</Nav.Link>
             </Container>
           </Navbar>
         )

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap'
-import './style.scss'
+import './Banner.scss'
 
 import TypeIt from 'typeit';
 import "react-typeit/build/styles.min.css"

@@ -2,5 +2,6 @@
   "static/js/1.chunk.js": "/wp-content/themes/portfolio/static/js/1.chunk.js",
   "main.js": "/wp-content/themes/portfolio/static/js/main.chunk.js",
   "runtime~main.js": "/wp-content/themes/portfolio/static/js/bundle.js",
-  "index.php": "/wp-content/themes/portfolio/index.php"
+  "index.php": "/wp-content/themes/portfolio/index.php",
+  "static/media/logo.svg": "/wp-content/themes/portfolio/static/media/logo.08a6f783.svg"
 }

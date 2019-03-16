@@ -4,19 +4,46 @@
     width: 100%;
     transition: 500ms ease all;
     background-color: transparent !important;
-    .navbar-brand {
-        padding-left: 15px;
-        p {
-            font-size: 30px;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #fff;
-            font-family: 'Raleway', sans-serif;
-        }
-    }
 }
 
 .transparent-bg {
     background-color: transparent !important;
+}
+
+.nav-link {
+    color: rgba(255,255,255, 0.7);
+    background-color: transparent;
+
+    &:hover {
+        color:rgba(212, 212, 212, 0.699); 
+    }
+}
+
+.logo-invert {
+    -webkit-filter: invert(100%); /* safari 6.0 - 9.0 */
+          filter: invert(100%);
+
+    max-height: 50px;
+}
+
+.navbar-brand {
+    padding-left: 15px;
+    display: flex;
+    align-items: flex-end;
+    p {
+        font-size: 30px;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: #fff;
+        font-family: 'Raleway', sans-serif;
+    }
+}
+
+.rest-of-name {
+    margin-left: 4px;
+    font-weight: 400;
+    font-size: 25px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }

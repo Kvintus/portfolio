@@ -5,6 +5,8 @@
     background-position: center;
     height: 700px;
     z-index: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
 
     p {
         color: white;
@@ -74,4 +76,15 @@
         display: inline-block;
         margin-right: 12px;
     }
+}
+
+
+.banner-triangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-width: 7rem 100vw 0 0;
+    border-color: transparent #fff #fff transparent;
+    border-style: solid;
 }
