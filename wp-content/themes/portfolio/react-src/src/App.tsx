@@ -4,7 +4,7 @@ import './App.scss';
 import { Container } from 'react-bootstrap';
 var Banner = require('./components/Banner/index.jsx').default
 import "react-typeit/build/styles.min.css"
-import Navbar from './components/CustomNavbar'
+import Navbar from './components/CustomNavbar/index.jsx'
 
 class App extends Component {
  
@@ -23,6 +23,16 @@ class App extends Component {
           Reiciendis, eaque eos dolorem beatae quibusdam perferendis asperiores modi. Error recusandae impedit delectus rem, inventore non qui, consequuntur, deserunt sint illo praesentium amet? Sed harum temporibus fugiat cum, inventore quam.
           Dolores reiciendis tempore inventore sapiente debitis ratione porro similique excepturi. Obcaecati, commodi corporis? Ut, incidunt soluta. Unde officia, accusamus excepturi eos ratione harum laudantium, voluptates, impedit labore omnis deserunt cumque!
           Adipisci non eaque velit, autem dolor veniam. Dignissimos tempora ut soluta neque harum illum culpa, cupiditate voluptates! Nihil sint consequuntur quas laudantium sunt. Placeat neque laudantium maiores sequi tempora ratione.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum excepturi repellat molestiae aut ab placeat vero, suscipit repellendus, voluptatem quod ut beatae odit! Ullam iusto fugit expedita vel voluptatibus? Veniam.
+          Deserunt magnam autem nostrum ea consectetur consequuntur suscipit ipsam recusandae fuga quibusdam eos accusantium laudantium, provident eum laborum, soluta praesentium adipisci obcaecati quo possimus natus beatae? Quaerat dolores architecto perspiciatis?
+          Voluptates est omnis autem, magni cumque quaerat alias. Molestiae necessitatibus adipisci magni molestias earum doloremque hic ex nobis, ducimus ut quos nam, non deleniti architecto minus harum aperiam quis perferendis!
+          Ipsam sequi laboriosam nisi? Possimus, provident? Corrupti, consequuntur minima? Reiciendis, recusandae perferendis voluptatem quia sunt, iure accusantium ullam error molestias placeat vero eaque doloribus labore quod asperiores cumque! Necessitatibus, beatae?
+          Suscipit ipsa ratione ducimus modi enim nulla voluptatibus nihil provident quia quo, officiis iste? Tempora dicta enim similique nemo harum vitae accusamus aspernatur! Optio, blanditiis? Veritatis tenetur qui minima vel?
+          Nam natus veritatis inventore nihil mollitia molestiae quisquam dolor tempora saepe doloremque architecto distinctio maiores, odio earum, perferendis provident consequuntur odit unde tenetur ducimus? Laboriosam recusandae dignissimos enim voluptatibus ratione!
+          Perspiciatis dicta sint tempore sed, nulla iusto reprehenderit a repellat optio qui soluta, eum facilis voluptatibus necessitatibus, maiores facere natus consequuntur praesentium aliquid aut minus labore sequi. Quis, fuga quod!
+          Minima molestiae alias facere facilis beatae incidunt, omnis aperiam praesentium? Laboriosam aliquam nam id aspernatur odit, tempora suscipit. Omnis incidunt, veniam placeat quis repellat odio assumenda eum atque nesciunt dolorem.
+          Aspernatur doloremque esse quod vitae necessitatibus consequatur? Tempore fugit nam obcaecati optio provident saepe earum, maxime, veritatis explicabo corrupti quisquam quibusdam reiciendis. Dolores, eum tempora. Beatae optio pariatur error modi!
+          Quae repellat nihil voluptas vitae cupiditate laudantium facere, delectus quasi ea tempore recusandae repellendus ratione ex voluptate, a tenetur nostrum harum cumque quis libero facilis quas eius fugit esse. Quis.
           Adipisci ea, ipsum dolor minima perspiciatis animi? Placeat maxime magni corrupti possimus natus unde dolore, saepe suscipit architecto quas quasi quibusdam impedit, doloribus nam ad labore, quam recusandae! Quo, adipisci.
         </Container>
       </div>
