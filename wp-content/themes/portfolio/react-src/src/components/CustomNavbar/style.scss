@@ -1,0 +1,22 @@
+.navbary {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    transition: 500ms ease all;
+    background-color: transparent !important;
+    .navbar-brand {
+        padding-left: 15px;
+        p {
+            font-size: 30px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
+            font-family: 'Raleway', sans-serif;
+        }
+    }
+}
+
+.transparent-bg {
+    background-color: transparent !important;
+}
