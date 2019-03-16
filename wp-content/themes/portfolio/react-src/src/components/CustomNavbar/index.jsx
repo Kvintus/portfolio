@@ -24,28 +24,20 @@ class CustomNavbar extends React.Component {
           }>
             <Container>
               <Navbar.Brand href="#home">
-                <img width={45} height={45} className="logo-invert" src={require('./logo.svg')} alt=""/>
+                <img width={45} height={45} className="logo-invert" src={require('./robustthickest.svg')} alt=""/>
                 <span className="rest-of-name">
                   OLIK
                 </span>
               </Navbar.Brand>
-              {/* <div className="nav navbar-nav navbar-right">
-                <Nav.Link href="#home">Home</Nav.Link>
-                <Nav.Link href="#home">About</Nav.Link>
-                <Nav.Link href="#home">Work</Nav.Link>
-                <Nav.Link href="#home">Resume</Nav.Link>
-                <Nav.Link href="#home">Blog</Nav.Link>
-                <Nav.Link href="#home">Contact</Nav.Link>
-              </div> */}
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
-                    <Nav.Link href="#home">Home</Nav.Link>
-                    <Nav.Link href="#link">Link</Nav.Link>
+                  <Nav.Link href="#home">Home</Nav.Link>
+                  <Nav.Link href="#home">About</Nav.Link>
+                  <Nav.Link href="#home">Work</Nav.Link>
+                  <Nav.Link href="#home">Resume</Nav.Link>
+                  <Nav.Link href="#home">Blog</Nav.Link>
+                  <Nav.Link href="#home">Contact</Nav.Link>
                   </Nav>
                 </Navbar.Collapse>
             </Container>
