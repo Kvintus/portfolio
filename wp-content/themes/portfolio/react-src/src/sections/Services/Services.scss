@@ -1,0 +1,38 @@
+@import '../../variables.scss';
+
+.service {
+    border: 1px solid #f7f7f7;
+    padding: 40px 30px;
+    background: #fff;
+    margin-bottom: 30px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.08);
+    position: relative;
+    transition: all 0.4s ease;
+    border-bottom: 3px solid transparent;
+    box-sizing: border-box;
+
+    h4 {
+        font-size: 22px;
+        margin-top: 30px;
+        text-transform: capitalize;
+        color: $darkColor;
+        font-weight: 500;
+        transition: all 0.4s ease;
+    }
+
+    i {
+        color: $primaryColor;
+        font-size: 40px;
+        display: block;
+     }
+
+    &:hover {
+        background: #fff;
+        border-bottom: 3px solid $primaryColor;
+        transform: translateY(-7px);
+
+        h4 {
+            color: $primaryColor;
+        }
+    }
+}

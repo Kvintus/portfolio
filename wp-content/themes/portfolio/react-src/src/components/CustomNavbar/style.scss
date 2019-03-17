@@ -60,7 +60,7 @@
 
 @mixin blackNavLink {
     .nav-link {
-        color: #222!important;
+        color: $darkColor !important;
         transition: all 0.3s ease-in-out;
         -webkit-transition: all 0.3s ease-in-out;
         &:hover {
@@ -85,7 +85,7 @@
     @include blackNavLink();
 
     .rest-of-name {
-        color: #222!important;
+        color: $darkColor !important;
     }
 }
 

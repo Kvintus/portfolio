@@ -5,7 +5,10 @@ import { Container } from 'react-bootstrap';
 var Banner = require('./components/Banner/index.jsx').default
 import "react-typeit/build/styles.min.css"
 import Navbar from './components/CustomNavbar/index.jsx'
-import AboutMe from './sections/AboutMe/AboutMe.jsx'
+
+// Sections
+import AboutMe from './sections/AboutMe/AboutMe'
+import Services from './sections/Services/Services.jsx'
 
 class App extends Component {
  
@@ -14,7 +17,8 @@ class App extends Component {
       <div className="App">
         <Navbar/>
         <Banner/>
-        <AboutMe/>
+        <AboutMe className="section"/>
+        <Services/>
       </div>
     );
   }

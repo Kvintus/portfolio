@@ -34,7 +34,7 @@ class Banner extends React.Component {
     }
 
     async fetchBasicInfo() {
-        let {data} = await api.get('home')
+        let {data} = await api.get('section/home')
        
         this.setState({
             text: data.text,
