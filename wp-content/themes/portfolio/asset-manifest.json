@@ -1,7 +1,16 @@
 {
-  "static/js/1.chunk.js": "/wp-content/themes/portfolio/static/js/1.chunk.js",
-  "main.js": "/wp-content/themes/portfolio/static/js/main.chunk.js",
-  "runtime~main.js": "/wp-content/themes/portfolio/static/js/bundle.js",
+  "main.css": "/wp-content/themes/portfolio/static/css/main.7d718c93.chunk.css",
+  "main.js": "/wp-content/themes/portfolio/static/js/main.06ba7b93.chunk.js",
+  "main.js.map": "/wp-content/themes/portfolio/static/js/main.06ba7b93.chunk.js.map",
+  "runtime~main.js": "/wp-content/themes/portfolio/static/js/runtime~main.8f332f44.js",
+  "runtime~main.js.map": "/wp-content/themes/portfolio/static/js/runtime~main.8f332f44.js.map",
+  "static/css/2.eb441122.chunk.css": "/wp-content/themes/portfolio/static/css/2.eb441122.chunk.css",
+  "static/js/2.a87d110f.chunk.js": "/wp-content/themes/portfolio/static/js/2.a87d110f.chunk.js",
+  "static/js/2.a87d110f.chunk.js.map": "/wp-content/themes/portfolio/static/js/2.a87d110f.chunk.js.map",
   "index.php": "/wp-content/themes/portfolio/index.php",
+  "precache-manifest.868f5630760025645f9053f3cdf01112.js": "/wp-content/themes/portfolio/precache-manifest.868f5630760025645f9053f3cdf01112.js",
+  "service-worker.js": "/wp-content/themes/portfolio/service-worker.js",
+  "static/css/2.eb441122.chunk.css.map": "/wp-content/themes/portfolio/static/css/2.eb441122.chunk.css.map",
+  "static/css/main.7d718c93.chunk.css.map": "/wp-content/themes/portfolio/static/css/main.7d718c93.chunk.css.map",
   "static/media/robustthickest.svg": "/wp-content/themes/portfolio/static/media/robustthickest.ef6744be.svg"
 }
