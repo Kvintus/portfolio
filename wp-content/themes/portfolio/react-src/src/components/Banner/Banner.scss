@@ -1,6 +1,8 @@
+@import '../../variables.scss';
+
 #caro-banner {
     position: relative;
-    background-image: url(http://abhtheme.com/html-preview/tm/dekha/dekha/images/banner.jpg?fbclid=IwAR2X1kiAv1QjNBCiTbRO-PfijGIbYo7bU82kUSaOHP9CGYBQQ6Nx5vKYTgc);
+    background-image: url(http://localhost:8080/wp-content/uploads/2019/03/banner.jpg);
     background-size: cover;
     background-position: center;
     height: 700px;
@@ -18,7 +20,7 @@
 
     .banner-content {
         strong {
-            color: #1461ff;
+            color: $primaryColor;
             font-size: 30px;
             background: #fff;
             padding: 4px 18px;

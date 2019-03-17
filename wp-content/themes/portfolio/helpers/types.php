@@ -94,10 +94,31 @@ function create_testimonial_type()
     );
 }
 
+function create_social_media_type()
+{
+    register_post_type(
+        'social_media',
+        array(
+            'labels' => array(
+                'name' => __('Social Media'),
+                'singular_name' => __('Social Medium')
+            ),
+            'public' => true,
+            'show_in_rest' => true,
+            'query_var' => true,
+            'supports' => ['title', 'slug'],
+            'menu_icon' => 'dashicons-share',
+        )
+    );
+}
+
+
 
 add_action('init', 'create_section_type');
 add_action('init', 'create_service_type');
 add_action('init', 'create_project_type');
 add_action('init', 'create_timeline_event_type');
 add_action('init', 'create_testimonial_type');
+add_action('init', 'create_social_media_type');
+
 

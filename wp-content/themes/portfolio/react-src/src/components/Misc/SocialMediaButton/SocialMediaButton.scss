@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .social-media-button {
     color: #fff;
     border: 1px solid #fff;
@@ -13,6 +15,6 @@
     &:hover {
         background: #fff;
         border-color: #fff;
-        color: #1461ff;
+        color: $primaryColor;
     }
 }
