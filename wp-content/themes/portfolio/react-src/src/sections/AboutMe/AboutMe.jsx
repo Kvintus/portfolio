@@ -33,7 +33,7 @@ class AboutMe extends React.Component {
         console.log(this.calculateAge());
         
         return (
-            <section className={this.props.className}>
+            <section className={this.props.className} id={this.props.id}>
                 <Container>
                     <Row>
                         <Col md={5} xs={12}>

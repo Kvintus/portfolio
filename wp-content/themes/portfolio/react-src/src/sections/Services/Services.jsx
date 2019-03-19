@@ -1,9 +1,9 @@
 import React from 'react'
-import {Container, Row, Col} from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 
 import './Services.scss'
 import SectionIntro from '../../components/SectionIntro/SectionIntro.tsx'
-import {api} from '../../api';
+import { api } from '../../api';
 
 
 class Services extends React.Component {
@@ -13,8 +13,8 @@ class Services extends React.Component {
     }
 
     async fetchServices() {
-        let {data} = await api.get('services');
-        this.setState({services: data});
+        let { data } = await api.get('services');
+        this.setState({ services: data });
     }
 
     async componentWillMount() {
@@ -24,7 +24,7 @@ class Services extends React.Component {
     generateCardCols() {
         return this.state.services.map(service => {
             return (
-                <Col md={4} sm={6} xs={12} key={service.id}>
+                <Col lg={4} md={6} xs={12} key={service.id}>
                     <div className="service">
                         <i className={`${service.iconClasses}`}></i>
                         <h4>{service.title}</h4>

@@ -4,12 +4,12 @@ import './BasicButton.scss';
 
 interface PropsInterface {
     text: string
-    atClick: Function
+    atClick?: Function
 }
 
 const BasicButton = (props: PropsInterface) => {
     return (
-        <Button onClick={(e: React.MouseEvent<HTMLButtonElement>) => props.atClick()} className="main-btn">{props.text}</Button>
+        <Button onClick={(e: React.MouseEvent<HTMLButtonElement>) => props.atClick ? props.atClick() : null} className="main-btn">{props.text}</Button>
     )
 }
 
