@@ -1,5 +1,5 @@
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
   @media screen and (max-width: 960px) {
     width: 3px;
   }
@@ -7,16 +7,40 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #1f1f1fe7; 
+  background: #1f1f1f00; 
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: rgba(199, 199, 199, 0.685); 
+  background: rgba(41, 41, 41, 0.74);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
+}
+
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 14px;
+  line-height: 26px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #777;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+  color: #222;
 }
