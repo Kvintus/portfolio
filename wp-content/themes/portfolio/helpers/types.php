@@ -112,10 +112,28 @@ function create_social_media_type()
     );
 }
 
+function create_technology_type()
+{
+    register_post_type(
+        'technology',
+        array(
+            'labels' => array(
+                'name' => __('Technologies'),
+                'singular_name' => __('Technology')
+            ),
+            'public' => true,
+            'show_in_rest' => true,
+            'query_var' => true,
+            'supports' => ['title', 'slug'],
+            'menu_icon' => 'dashicons-editor-code',
+        )
+    );
+}
 
 
 add_action('init', 'create_section_type');
 add_action('init', 'create_service_type');
+add_action('init', 'create_technology_type');
 add_action('init', 'create_project_type');
 add_action('init', 'create_timeline_event_type');
 add_action('init', 'create_testimonial_type');
