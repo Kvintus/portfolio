@@ -22,26 +22,32 @@ class MyWork extends React.Component<Props, State> {
             {
                 name: "Horus",
                 categories: ['Python', 'Vue'],
+                imageUrl: "http://localhost:8080/wp-content/uploads/2019/03/Screenshot_20190320_062753.png"
             },
             {
                 name: "Moje Sidlo",
-                categories: ['WordPress']
+                categories: ['WordPress'],
+                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
             },
             {
                 name: "Unicorn",
-                categories: ['Laravel', 'Vue', 'PHP']
+                categories: ['Laravel', 'Vue', 'PHP'],
+                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
             },
             {
                 name: "Horsus",
                 categories: ['Python', 'Vue'],
+                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
             },
             {
                 name: "Moje sSidlo",
-                categories: ['WordPress']
+                categories: ['WordPress'],
+                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
             },
             {
                 name: "Unicorsn",
-                categories: ['Laravel', 'Vue', 'PHP']
+                categories: ['Laravel', 'Vue', 'PHP'],
+                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
             }
         ],
         activeFilter: "",

@@ -4,6 +4,7 @@ import './WorkCard.scss'
 export interface Project {
     name: string
     categories: string[]
+    imageUrl: string
 }
 
 interface Props {
@@ -15,7 +16,7 @@ const WorkCard = (props: Props) => {
 
     return (
         <div className="work-card">
-            <img src="http://abhtheme.com/html-preview/tm/dekha/dekha/images/portfolio/work-2.jpg" alt=""/>
+            <img src={props.project.imageUrl} alt=""/>
             <div className="overlay">
                 <div className="info full-width">
                     <p>{categoriesString}</p>
