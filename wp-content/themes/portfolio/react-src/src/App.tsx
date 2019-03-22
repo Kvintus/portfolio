@@ -12,6 +12,7 @@ import AboutMe from './sections/AboutMe/AboutMe'
 import Services from './sections/Services/Services.jsx'
 import Available from './sections/Available/Available'
 import MyWork from './sections/MyWork/MyWork';
+import Testimonials from './sections/Testimonials/Testimonials'
 // import Store from './redux/reducers'
 
  
@@ -27,6 +28,7 @@ class App extends Component {
           <Services/>
           <Available></Available>
           <MyWork className="section"/>
+          <Testimonials></Testimonials>
         </div>
     );
   }

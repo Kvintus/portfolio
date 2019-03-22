@@ -61,7 +61,8 @@ function getTestimonials() {
             'name' => $testimonial->post_title,
             'position' => $testimonial->position,
             'image' => get_post((int)$testimonial->image)->guid,
-            'text' => $testimonial->text
+            'text' => $testimonial->text,
+            'linkedin_url' => $testimonial->linkedin_url
         ];
     }, $testimonials);
 }
