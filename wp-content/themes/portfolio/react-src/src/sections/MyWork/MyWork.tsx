@@ -2,6 +2,7 @@ import React from 'react'
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import FlipMove from 'react-flip-move'
 import './MyWork.scss'
+import {api} from './../../api'
 
 import SectionInro from '../../components/SectionIntro/SectionIntro';
 import WorkCard, {Project} from '../../components/WorkCard/WorkCard' 
@@ -12,45 +13,25 @@ interface Props {
 
 interface State {
     projects: Project[]
-    activeFilter: String
-    filters: String[]
+    activeFilter: string
+    filters: string[]
 }
 
 class MyWork extends React.Component<Props, State> {
     state: State = {
-        projects: [
-            {
-                name: "Horus",
-                categories: ['Python', 'Vue'],
-            },
-            {
-                name: "Moje Sidlo",
-                categories: ['WordPress']
-            },
-            {
-                name: "Unicorn",
-                categories: ['Laravel', 'Vue', 'PHP']
-            },
-            {
-                name: "Horsus",
-                categories: ['Python', 'Vue'],
-            },
-            {
-                name: "Moje sSidlo",
-                categories: ['WordPress']
-            },
-            {
-                name: "Unicorsn",
-                categories: ['Laravel', 'Vue', 'PHP']
-            }
-        ],
-        activeFilter: "",
+        projects: [],
+        activeFilter: "All",
         filters: ['All', 'Node', 'PHP', 'Go']
+    }
+
+    async componentWillMount() {
+        let {data} = await api.get('projects');
+        this.setState({projects: data});
     }
 
     generateWorkCards() {
         return this.state.projects.map(project=> {
-            if (Math.floor(Math.random() * 2)) {
+            if (this.state.activeFilter === "All" || project.technologies.includes(this.state.activeFilter)) {
                 return (
                     <Col lg={4} md={6} xs={12} key={project.name}>
                         <WorkCard project={project}/>

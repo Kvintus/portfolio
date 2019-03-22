@@ -57,7 +57,6 @@ function create_project_type()
     );
 }
 
-
 function create_timeline_event_type()
 {
     register_post_type(
