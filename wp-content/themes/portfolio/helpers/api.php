@@ -51,6 +51,37 @@ function getProjectName(int $projectId) {
     return get_post($projectId)->post_title;
 }
 
+function getTestimonials() {
+    $testimonials = acf_get_posts([
+        'post_type' => 'testimonial',
+    ]);
+
+    return array_map(function ($testimonial) {
+        return [
+            'name' => $testimonial->post_title,
+            'position' => $testimonial->position,
+            'image' => get_post((int)$testimonial->image)->guid,
+            'text' => $testimonial->text
+        ];
+    }, $testimonials);
+}
+
+function getTimelineEvents() {
+    $events = acf_get_posts([
+        'post_type' => 'timeline_event'
+    ]);
+
+    return array_map(function ($event) {
+        return [
+            'since' => $event->since,
+            'to' => (int)$event->to ? $event->to : "Present",
+            'text' => $event->text,
+            'image_icon' => $event->image_icon,
+            'icon' => $event->icon
+        ];
+    }, $events);
+}
+
 function getImageUrls($project) {
     $urls = [];
     $ids = explode(',', $project->gallery);
@@ -85,6 +116,16 @@ add_action('rest_api_init', function () {
     register_rest_route('wp/v2', 'social_media', array(
         'methods'  => 'GET',
         'callback' => 'getSocialMedia'
+    ));
+
+    register_rest_route('wp/v2', 'testimonials', array(
+        'methods'  => 'GET',
+        'callback' => 'getTestimonials'
+    ));
+
+    register_rest_route('wp/v2', 'timeline_events', array(
+        'methods'  => 'GET',
+        'callback' => 'getTimelineEvents'
     ));
 
     register_rest_route('wp/v2', 'services', array(
