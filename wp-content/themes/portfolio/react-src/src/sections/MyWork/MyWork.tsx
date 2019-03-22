@@ -2,6 +2,7 @@ import React from 'react'
 import {Container, Row, Col, Button} from 'react-bootstrap'
 import FlipMove from 'react-flip-move'
 import './MyWork.scss'
+import {api} from './../../api'
 
 import SectionInro from '../../components/SectionIntro/SectionIntro';
 import WorkCard, {Project} from '../../components/WorkCard/WorkCard' 
@@ -12,51 +13,25 @@ interface Props {
 
 interface State {
     projects: Project[]
-    activeFilter: String
-    filters: String[]
+    activeFilter: string
+    filters: string[]
 }
 
 class MyWork extends React.Component<Props, State> {
     state: State = {
-        projects: [
-            {
-                name: "Horus",
-                categories: ['Python', 'Vue'],
-                imageUrl: "http://localhost:8080/wp-content/uploads/2019/03/Screenshot_20190320_062753.png"
-            },
-            {
-                name: "Moje Sidlo",
-                categories: ['WordPress'],
-                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
-            },
-            {
-                name: "Unicorn",
-                categories: ['Laravel', 'Vue', 'PHP'],
-                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
-            },
-            {
-                name: "Horsus",
-                categories: ['Python', 'Vue'],
-                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
-            },
-            {
-                name: "Moje sSidlo",
-                categories: ['WordPress'],
-                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
-            },
-            {
-                name: "Unicorsn",
-                categories: ['Laravel', 'Vue', 'PHP'],
-                imageUrl: "https://www.acidgreen.com.au/wp-content/uploads/2015/08/responsive-devices-639x366.png"
-            }
-        ],
-        activeFilter: "",
+        projects: [],
+        activeFilter: "All",
         filters: ['All', 'Node', 'PHP', 'Go']
+    }
+
+    async componentWillMount() {
+        let {data} = await api.get('projects');
+        this.setState({projects: data});
     }
 
     generateWorkCards() {
         return this.state.projects.map(project=> {
-            if (Math.floor(Math.random() * 2)) {
+            if (this.state.activeFilter === "All" || project.technologies.includes(this.state.activeFilter)) {
                 return (
                     <Col lg={4} md={6} xs={12} key={project.name}>
                         <WorkCard project={project}/>
