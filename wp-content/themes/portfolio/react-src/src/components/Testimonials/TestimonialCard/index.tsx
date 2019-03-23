@@ -21,7 +21,13 @@ function navigateToUrl(url: string) {
 
 const TestimonialCard = (props: Props) => {
     return (
-        <div className="testimonial" onClick={() => navigateToUrl(props.testimonial.linkedin_url)}>
+        <div 
+            className="testimonial" 
+            onClick={() => navigateToUrl(props.testimonial.linkedin_url)}
+            style={{
+                'cursor': `${props.testimonial.linkedin_url ? 'pointer': 'default'}`
+            }}
+        >
             <div className="testimonial-picture">
                 <img src={props.testimonial.image} alt={`${props.testimonial.name}'s picture`}/>
             </div>
