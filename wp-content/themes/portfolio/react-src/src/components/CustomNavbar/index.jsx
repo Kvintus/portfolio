@@ -17,14 +17,8 @@ class CustomNavbar extends React.Component {
     }
     
     scrollToCustom(section) {
-      console.log(section);
       let element = document.getElementById(section);
-      console.log(element);
-      
       let paddingTop = parseInt(window.getComputedStyle(element, null).getPropertyValue('padding-top'));
-      console.log(paddingTop);
-      
-      // element.scrollIntoView(true)
       window.scrollTo(0, element.offsetTop - 56)
     }
 

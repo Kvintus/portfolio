@@ -51,7 +51,7 @@
         To begin the development, run `npm run wpstart` or `yarn wpstart`.
         To create a production bundle, use `npm run wpbuild` or `yarn wpbuild`.
     -->
-    <script src="/wp-content/themes/portfolio/static/js/bundle.js"></script><script src="/wp-content/themes/portfolio/static/js/1.chunk.js"></script><script src="/wp-content/themes/portfolio/static/js/main.chunk.js"></script><?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
+    <script src="/wp-content/themes/portfolio/static/js/bundle.js"></script><script src="/wp-content/themes/portfolio/static/js/0.chunk.js"></script><script src="/wp-content/themes/portfolio/static/js/main.chunk.js"></script><?php $BRC_TEMPLATE_PATH = parse_url(get_template_directory_uri(), PHP_URL_PATH); ?>
 <script src='<?php echo $BRC_TEMPLATE_PATH; ?>/react-src/node_modules/@devloco/react-scripts-wptheme-utils/wpThemeClient.js'></script>
 <script src='<?php echo $BRC_TEMPLATE_PATH; ?>/react-src/node_modules/@devloco/react-scripts-wptheme-error-overlay/wpThemeErrorOverlay.js'></script>
 

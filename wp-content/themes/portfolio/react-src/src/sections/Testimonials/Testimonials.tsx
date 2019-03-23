@@ -90,7 +90,6 @@ class Testimonials extends React.Component<{}, State> {
     }
 
     render() {
-        console.log(this.state.testimonials)
         return (
             <Divider
                 image="https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg"

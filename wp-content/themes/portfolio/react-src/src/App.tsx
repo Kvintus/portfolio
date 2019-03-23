@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.scss';
 import { Container } from 'react-bootstrap';
 import { Provider } from "react-redux";
-var Banner = require('./components/Banner/index.jsx').default
+var Banner = require('./components/Banner').default
 import "react-typeit/build/styles.min.css"
 import Navbar from './components/CustomNavbar/index.jsx'
 
@@ -13,6 +13,8 @@ import Services from './sections/Services/Services.jsx'
 import Available from './sections/Available/Available'
 import MyWork from './sections/MyWork/MyWork';
 import Testimonials from './sections/Testimonials/Testimonials'
+import ContactMe from './sections/ContactMe'
+import Footer from './sections/Footer'
 // import Store from './redux/reducers'
 
  
@@ -29,6 +31,8 @@ class App extends Component {
           <Available></Available>
           <MyWork className="section" id="work"/>
           <Testimonials></Testimonials>
+          <ContactMe className="section"/>
+          <Footer/>
         </div>
     );
   }
