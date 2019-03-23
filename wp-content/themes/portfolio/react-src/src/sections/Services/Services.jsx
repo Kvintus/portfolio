@@ -37,7 +37,7 @@ class Services extends React.Component {
 
     render() {
         return (
-            <section className="section text-center">
+            <section className="section text-center" id={this.props.id}>
                 <Container>
                     <Col xs={12}>
                         <SectionIntro

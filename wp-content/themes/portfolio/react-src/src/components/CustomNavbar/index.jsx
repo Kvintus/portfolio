@@ -16,6 +16,17 @@ class CustomNavbar extends React.Component {
         });
     }
     
+    scrollToCustom(section) {
+      console.log(section);
+      let element = document.getElementById(section);
+      console.log(element);
+      
+      let paddingTop = parseInt(window.getComputedStyle(element, null).getPropertyValue('padding-top'));
+      console.log(paddingTop);
+      
+      // element.scrollIntoView(true)
+      window.scrollTo(0, element.offsetTop-paddingTop+10)
+    }
 
     render() {
         return (
@@ -25,22 +36,22 @@ class CustomNavbar extends React.Component {
             <Container>
               <Navbar.Brand href="#home">
                 <img width={45} height={45} className="logo-invert" src={require('./robustthickest.svg')} alt=""/>
-                <span className="rest-of-name">
+                <span className="rest-of-name" onClick={() => this.scrollToCustom('#about-me')}>
                   OLIK
                 </span>
               </Navbar.Brand>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                   <Nav className="ml-auto">
-                  <Nav.Link href="#home">Home</Nav.Link>
-                  <Nav.Link href="#home">About</Nav.Link>
-                  <Nav.Link href="#home">Work</Nav.Link>
-                  <Nav.Link href="#home">Resume</Nav.Link>
-                  <Nav.Link href="#home">Blog</Nav.Link>
-                  <Nav.Link href="#home">Contact</Nav.Link>
+                  <span onClick={() => this.scrollToCustom('caro-banner')} className="nav-link">Home</span>
+                    <span onClick={() => this.scrollToCustom('about-me')} className="nav-link">About</span>
+                    <span onClick={() => this.scrollToCustom('work')} className="nav-link">Work</span>
+                    <span onClick={() => this.scrollToCustom('resume')} className="nav-link">Resume</span>
+                    <span onClick={() => this.scrollToCustom('contact-me')} className="nav-link">Contact</span>
                   </Nav>
                 </Navbar.Collapse>
             </Container>
+            
           </Navbar>
         )
     }

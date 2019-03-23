@@ -10,6 +10,7 @@ import Filter from '../../components/MyWork/Filter'
 
 interface Props {
     className?: string
+    id?: string
 }
 
 interface FilterType {
@@ -59,7 +60,7 @@ class MyWork extends React.Component<Props, State> {
 
     render() {
         return (
-            <div className={this.props.className}>
+            <section className={this.props.className} id={this.props.id}>
                 <SectionInro
                     subHeading="work"
                     heading="My Work"
@@ -77,7 +78,7 @@ class MyWork extends React.Component<Props, State> {
                         </FlipMove>
                     </Row>
                 </Container>
-            </div>
+            </section>
         )
     }
 }

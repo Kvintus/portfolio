@@ -59,7 +59,6 @@ class Testimonials extends React.Component<{}, State> {
             return (
                 <OwlCarousel
                     loop
-                    margin={30}
                     nav={true}
                     items={1}
                     responsive={{

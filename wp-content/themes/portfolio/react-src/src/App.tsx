@@ -24,10 +24,10 @@ class App extends Component {
         <div className="App">
           <Navbar/>
           <Banner/>
-          <AboutMe className="section"/>
-          <Services/>
+          <AboutMe id="about-me" className="section"/>
+          <Services id="services"/>
           <Available></Available>
-          <MyWork className="section"/>
+          <MyWork className="section" id="work"/>
           <Testimonials></Testimonials>
         </div>
     );
