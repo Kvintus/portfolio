@@ -13,9 +13,15 @@ interface Props {
     testimonial: Testimonial
 }
 
+function navigateToUrl(url: string) {
+    if (url) {
+        window.open(url, '_blank');
+    }
+}
+
 const TestimonialCard = (props: Props) => {
     return (
-        <div className="testimonial">
+        <div className="testimonial" onClick={() => navigateToUrl(props.testimonial.linkedin_url)}>
             <div className="testimonial-picture">
                 <img src={props.testimonial.image} alt={`${props.testimonial.name}'s picture`}/>
             </div>
