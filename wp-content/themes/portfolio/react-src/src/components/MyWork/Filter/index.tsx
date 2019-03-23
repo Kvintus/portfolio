@@ -19,6 +19,7 @@ const Filter = (props: FilterProps) => {
                         return (
                             <li
                                 onClick={() => props.onChange(filter)}
+                                key={filter}
                                 className={props.active === filter ? "active" : ''}
                             >{filter}</li>
                         )

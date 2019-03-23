@@ -1,3 +1,37 @@
-.testimonials-wrapper {
-    padding: 70px 0;
+@import '../../variables.scss';
+
+@mixin testimonialNavButton() {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: $primaryColor;
+    border-radius: 50%;
+    text-align: center;
+    background-color: white;
+    position: absolute;
 }
+
+.testimonials-wrapper {
+    padding: 100px 0 70px 0;
+    .owl-nav {
+        @media screen and (max-width: 1200px) {
+            display: none;
+        }
+    }
+    .owl-prev {
+        @include testimonialNavButton();
+        left: -60px;
+    }
+
+    .owl-next {
+        @include testimonialNavButton();
+        right: -60px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+}
+
