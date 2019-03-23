@@ -25,7 +25,7 @@ class CustomNavbar extends React.Component {
       console.log(paddingTop);
       
       // element.scrollIntoView(true)
-      window.scrollTo(0, element.offsetTop-paddingTop+10)
+      window.scrollTo(0, element.offsetTop - 56)
     }
 
     render() {
