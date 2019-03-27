@@ -1,4 +1,5 @@
 import React from 'react'
+import {Container, Row, Col} from 'react-bootstrap';
 
 import SectionIntro from '../../components/SectionIntro/SectionIntro'
 import './index.scss'
@@ -7,7 +8,7 @@ interface Props {
     className?: string
 }
 
-class ContactMe extends React.Component<Props> {
+class ContactMe extends React.Component<Props, {}> {
     render() {
         return (
             <section className={this.props.className}>

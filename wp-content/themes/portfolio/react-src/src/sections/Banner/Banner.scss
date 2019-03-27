@@ -1,0 +1,87 @@
+@import '../../variables.scss';
+
+#caro-banner {
+    position: relative;
+    // background-image: url(http://localhost:8080/wp-content/uploads/2019/03/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 700px;
+    z-index: 0;
+    overflow: hidden;
+    margin-bottom: 2rem;
+
+    p {
+        color: white;
+    }
+
+    .info {
+        margin-top: 200px;
+    }
+
+    .banner-content {
+        strong {
+            color: $primaryColor;
+            font-size: 30px;
+            background: #fff;
+            padding: 4px 18px;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #fff;
+            font-size: 50px;
+            margin: 20px 0 5px;
+            font-family: 'Raleway', sans-serif;
+            font-weight: 600;
+            
+            #typeit {
+                font-weight: 300;
+            }
+        }
+    }
+
+    // The Gradient
+    &:before {
+        content: "";
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        background: -webkit-linear-gradient(-45deg,rgba(88, 195, 255,.7) 0,rgba(0, 77, 230,.7) 40%,rgba(0, 59, 177,.7) 100%)
+    }
+    
+    &:after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0, 0.60);
+        z-index: -1;
+    }
+}
+
+.social-media-links {
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: inline-block;
+        margin-right: 12px;
+    }
+}
+
+
+.banner-triangle {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-width: 7rem 100vw 0 0;
+    border-color: transparent #fff #fff transparent;
+    border-style: solid;
+}
