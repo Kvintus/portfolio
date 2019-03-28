@@ -4,14 +4,13 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'mobx-react';
-import SocialMediaStore from './stores/SocialMedia';
-import InfoStore from './stores/Info';
+import SocialMediaStore from './stores/SocialMedia'
 
 require('et-line');
 require('animate.css')
 
 const Root= (
-    <Provider SocialMediaStore={SocialMediaStore} InfoStore={InfoStore}>
+    <Provider SocialMediaStore={SocialMediaStore} >
         <App/>
     </Provider>
 )

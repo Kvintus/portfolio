@@ -4,8 +4,7 @@ import {Container, Row, Col} from 'react-bootstrap';
 import SectionIntro from '../../components/SectionIntro/SectionIntro'
 import './index.scss'
 
-import Form from '../../components/ContactMe/Form';
-import InfoWidget from '../../components/ContactMe/Widget'
+import Form from '../../components/ContactMe/Form'
 
 interface Props {
     className?: string
@@ -23,10 +22,10 @@ class ContactMe extends React.Component<Props, {}> {
                 <Container>
                     <Row>
                         <Col lg={7} sm={12}>
-                            <Form/>
+                            <Form></Form>
                         </Col>
                         <Col lg={5} sm={12}>
-                            <InfoWidget/>
+
                         </Col>
                     </Row>
                 </Container>
