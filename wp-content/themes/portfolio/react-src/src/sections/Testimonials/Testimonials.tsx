@@ -16,36 +16,7 @@ interface State {
 
 class Testimonials extends React.Component<{}, State> {
     state = {
-        testimonials: [
-            // {
-            //     image: "http://localhost:8080/wp-content/uploads/2019/03/0.jpeg",
-            //     linkedin_url: "",
-            //     name: "Martin Zarecky",
-            //     position: "Lead Senior Developer",
-            //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat, a nemo cumque optio asperiores tempora delectus cupiditate"
-            // },
-            // {
-            //     image: "http://localhost:8080/wp-content/uploads/2019/03/0.jpeg",
-            //     linkedin_url: "",
-            //     name: "Martin d",
-            //     position: "Lead Senior Developer",
-            //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat, a nemo cumque optio asperiores tempora delectus cupiditate"
-            // },
-            // {
-            //     image: "http://localhost:8080/wp-content/uploads/2019/03/0.jpeg",
-            //     linkedin_url: "",
-            //     name: "Martin a",
-            //     position: "Lead Senior Developer",
-            //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat, a nemo cumque optio asperiores tempora delectus cupiditate"
-            // },
-            // {
-            //     image: "http://localhost:8080/wp-content/uploads/2019/03/0.jpeg",
-            //     linkedin_url: "",
-            //     name: "Martin s",
-            //     position: "Lead Senior Developer",
-            //     text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim eveniet incidunt quidem illum repellat, a nemo cumque optio asperiores tempora delectus cupiditate"
-            // }
-        ],
+        testimonials: [],
         nav: true,
     }
 
@@ -59,7 +30,6 @@ class Testimonials extends React.Component<{}, State> {
             return (
                 <OwlCarousel
                     loop
-                    nav={true}
                     items={1}
                     responsive={{
                         0: {
@@ -72,9 +42,8 @@ class Testimonials extends React.Component<{}, State> {
                             items: 3
                         }
                     }}
-                    navElement='div'
                     navText={['<i class="fa fa-arrow-left"></i>', '<i class="fa fa-arrow-right"></i>']}
-                    >
+                >
                     {
                         this.state.testimonials.map((testimonial: Testimonial) => {
                             return (
@@ -82,8 +51,8 @@ class Testimonials extends React.Component<{}, State> {
                                         <TestimonialCard testimonial={testimonial}/>
                                     </div>
                                 )
-                            })
-                        }
+                        })
+                    }
                 </OwlCarousel>
             )
         }

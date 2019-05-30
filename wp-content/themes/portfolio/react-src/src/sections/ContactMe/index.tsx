@@ -2,9 +2,9 @@ import React from 'react'
 import {Container, Row, Col} from 'react-bootstrap';
 
 import SectionIntro from '../../components/SectionIntro/SectionIntro'
+import ContactMeForm from '../../components/ContactMe/Form'
+import ContactMeWidget from '../../components/ContactMe/Widget'
 import './index.scss'
-
-import Form from '../../components/ContactMe/Form'
 
 interface Props {
     className?: string
@@ -21,11 +21,11 @@ class ContactMe extends React.Component<Props, {}> {
                 />
                 <Container>
                     <Row>
-                        <Col lg={7} sm={12}>
-                            <Form></Form>
+                        <Col md={7} sm={12}>
+                            <ContactMeForm></ContactMeForm>
                         </Col>
-                        <Col lg={5} sm={12}>
-
+                        <Col md={5} sm={12}>
+                            <ContactMeWidget></ContactMeWidget>
                         </Col>
                     </Row>
                 </Container>
