@@ -3,12 +3,13 @@ version: '3.1'
 services:
 
   wordpress:
-    image: wordpress
+    build: .
     restart: always
     ports:
       - 8080:80
     volumes:
       - ./wp-content:/var/www/html/wp-content
+      - ./.htaccess:/var/www/html/.htaccess
     environment:
       WORDPRESS_DB_HOST: db
       WORDPRESS_DB_USER: ${MYSQL_USER}

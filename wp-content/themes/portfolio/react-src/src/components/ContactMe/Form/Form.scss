@@ -1,0 +1,16 @@
+@import '../../../variables.scss';
+
+.contact-me-form {
+    input, textarea {
+        border-radius: 0;
+        border-color: #ddd;
+        &:focus {
+            border-color: $primaryColor;
+            box-shadow: none;
+        }
+    }
+
+    button {
+        width: 100%
+    }
+}

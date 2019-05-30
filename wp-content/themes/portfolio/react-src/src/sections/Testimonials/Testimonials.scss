@@ -1,0 +1,47 @@
+@import '../../variables.scss';
+
+@mixin testimonialNavButton() {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    color: $primaryColor;
+    border-radius: 50%;
+    text-align: center;
+    background-color: white;
+    position: absolute;
+    transition: all 400ms ease;
+
+    &:hover {
+        // filter: brightness(0.85);
+        background-color: #d0d0d0;
+    }
+}
+
+.testimonials-wrapper {
+    padding: 100px 0 70px 0;
+    .owl-nav {
+        @media screen and (max-width: 1200px) {
+            display: none;
+        }
+    }
+    .owl-prev {
+        @include testimonialNavButton();
+        left: -60px;
+    }
+
+    .owl-next {
+        @include testimonialNavButton();
+        right: -60px;
+    }
+
+    .owl-nav {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+    }
+
+    .item {
+        padding: 0 15px;
+    }
+}
+

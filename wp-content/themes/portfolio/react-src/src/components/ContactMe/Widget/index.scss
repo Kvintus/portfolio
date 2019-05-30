@@ -1,0 +1,30 @@
+@import '../../../variables.scss';
+
+.contact_widget_area {
+    margin-left: 30px;
+    background: #fff;
+    -webkit-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 30px rgba(0, 0, 0, 0.1);
+    .contact_info {
+        padding: 30px 30px;
+        margin-bottom: -13px;
+        display: flex;
+        flex-flow: row;
+        i {
+            font-size: 26px;
+            color: $primaryColor;
+            float: left;
+            padding-right: 25px;
+        }
+        h5 {
+            color: #222;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 10px;
+        }
+        p {
+            margin: 0;
+        }
+    }
+}

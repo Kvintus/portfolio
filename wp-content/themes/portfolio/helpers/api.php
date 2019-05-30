@@ -1,20 +1,14 @@
 <?php
 
-function getSection($name) {
+function getSection($data) {
      $section = get_posts([
         'post_type' => 'section',
-        'name' => $name,
+        'name' => $data['type'],
     ]);
     if ($section) {
         return get_fields($section[0]->ID); 
     }
     return null;
-}
-
-
-function resolve_custom($data)
-{
-    return getSection($data['type']);
 }
 
 function getSocialMedia() {
@@ -61,7 +55,8 @@ function getTestimonials() {
             'name' => $testimonial->post_title,
             'position' => $testimonial->position,
             'image' => get_post((int)$testimonial->image)->guid,
-            'text' => $testimonial->text
+            'text' => $testimonial->text,
+            'linkedin_url' => $testimonial->linkedin_url
         ];
     }, $testimonials);
 }
@@ -140,7 +135,7 @@ add_action('rest_api_init', function () {
 
     register_rest_route('wp/v2', 'section/(?P<type>[\w-]+)', array(
         'methods'  => 'GET',
-        'callback' => 'resolve_custom'
+        'callback' => 'getSection'
     ));
 
     
