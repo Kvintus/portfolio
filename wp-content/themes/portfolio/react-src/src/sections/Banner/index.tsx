@@ -77,7 +77,8 @@ class Banner extends React.Component<Props> {
         return (
             <div id="caro-banner"
                 style={{
-                    background: `url(${this.state.banner_image})`
+                    background: `url(${this.state.banner_image})`,
+                    backgroundPosition: "center",
                 }}
             >
                 <div className="banner-triangle"></div>
