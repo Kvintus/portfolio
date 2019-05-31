@@ -13,7 +13,7 @@ interface Props {
 }
 
 const WorkCard = (props: Props) => {
-    let technologiesString = props.project.technologies.join(', ');
+    let technologiesString = props.project.technologies ? props.project.technologies.join(', ') : '';
 
     return (
         <div className="work-card">
@@ -21,7 +21,7 @@ const WorkCard = (props: Props) => {
             <div className="overlay">
                 <div className="info full-width">
                     <p>{technologiesString}</p>
-                    <h5>{props.project.name}</h5>
+                    <h4>{props.project.name}</h4>
                     <span className="icon">
                         <i className="fa fa-arrow-right"></i>
                     </span>

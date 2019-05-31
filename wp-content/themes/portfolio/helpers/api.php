@@ -95,13 +95,15 @@ function getProjects() {
 
 
     return array_map(function ($project) {
+        $technologiesList = array_map(function ($id) {return getProjectName((int)$id);}, $project->technologies);
+        if (!$technologiesList) $technologiesList = [];
         return [
             'name' => $project->post_title,
             'description' => $project->description,
             'title_image' => get_post($project->title_image)->guid,
             'images' => getImageUrls($project),
             'video' => $project->video,
-            'technologies' => array_map(function ($id) {return getProjectName((int)$id);}, $project->technologies)
+            'technologies' => $technologiesList
         ];
     }, $projects);;
 }

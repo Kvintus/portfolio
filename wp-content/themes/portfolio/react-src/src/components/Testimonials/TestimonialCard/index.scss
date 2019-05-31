@@ -1,5 +1,9 @@
 @import '../../../variables.scss';
 
+.owl-stage-outer {
+    padding: 12px 0 12px 0;
+}
+
 .testimonial {
     background: #fff;
     padding: 30px;
@@ -7,6 +11,10 @@
     position: relative;
     display: block;
     text-align: center;
+    transition: all 300ms ease-out;
+    &:hover {
+        transform: scale(1.02)
+    }
 }
 
 .testimonial-picture {

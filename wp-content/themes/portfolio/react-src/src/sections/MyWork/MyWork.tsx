@@ -39,6 +39,8 @@ class MyWork extends React.Component<Props, State> {
 
     async componentWillMount() {
         let {data} = await api.get('projects');
+        console.log('data:',data);
+        
         this.setState({projects: data});
     }
 
