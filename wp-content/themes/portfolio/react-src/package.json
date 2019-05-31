@@ -52,5 +52,5 @@
         "not op_mini all"
     ],
     "homepage": "/wp-content/themes/portfolio",
-    "browserLaunchTo": "http://localhost:8080"
+    "browserLaunchTo": "http://localhost:80"
 }
