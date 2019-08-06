@@ -54,7 +54,8 @@ function getTestimonials() {
         return [
             'name' => $testimonial->post_title,
             'position' => $testimonial->position,
-            'image' => get_post((int)$testimonial->image)->guid,
+            'image' => wp_get_attachment_image_src((int)$testimonial->image)[0],
+            // 'test' => get_template_directory_uri(),
             'text' => $testimonial->text,
             'linkedin_url' => $testimonial->linkedin_url
         ];
@@ -100,7 +101,7 @@ function getProjects() {
         return [
             'name' => $project->post_title,
             'description' => $project->description,
-            'title_image' => get_post($project->title_image)->guid,
+            'title_image' => wp_get_attachment_url($project->title_image),
             'images' => getImageUrls($project),
             'video' => $project->video,
             'technologies' => $technologiesList

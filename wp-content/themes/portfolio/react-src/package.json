@@ -27,6 +27,7 @@
         "react-masonry-component": "^6.2.1",
         "react-owl-carousel": "^2.3.1",
         "react-redux": "^6.0.1",
+        "react-router-dom": "^5.0.1",
         "react-scripts": "^2.1.5",
         "react-typeit": "^0.3.1-beta.1",
         "typeit": "^6.0.2",
@@ -52,5 +53,8 @@
         "not op_mini all"
     ],
     "homepage": "/wp-content/themes/portfolio",
-    "browserLaunchTo": "http://localhost:80"
+    "browserLaunchTo": "http://localhost:80",
+    "devDependencies": {
+        "@types/react-router-dom": "^4.3.4"
+    }
 }
