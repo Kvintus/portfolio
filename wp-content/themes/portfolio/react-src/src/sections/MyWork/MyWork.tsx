@@ -1,16 +1,20 @@
 import React from 'react'
-import {Container, Row, Col, Button} from 'react-bootstrap'
+import {Container, Row, Col, Button, Modal} from 'react-bootstrap'
+import {inject, observer} from 'mobx-react';
 import FlipMove from 'react-flip-move'
-import './MyWork.scss'
 import {api} from './../../api'
 
+import './MyWork.scss'
 import SectionInro from '../../components/SectionIntro/SectionIntro';
-import WorkCard, {Project} from '../../components/WorkCard/WorkCard' 
+import WorkCard from '../../components/WorkCard/WorkCard' 
+import {Project, ProjectsStore} from '../../stores/Projects';
 import Filter from '../../components/MyWork/Filter'
+import SingleProject from '../../components/SingleProject/SingleProject';
 
 interface Props {
     className?: string
     id?: string
+    ProjectsStore?: ProjectsStore
 }
 
 interface FilterType {
@@ -24,8 +28,11 @@ interface State {
         backend: FilterType
         [key: string]: FilterType;
     }
+    show: boolean
 }
 
+@inject('ProjectsStore')
+@observer
 class MyWork extends React.Component<Props, State> {
     state: State = {
         projects: [],
@@ -34,18 +41,16 @@ class MyWork extends React.Component<Props, State> {
                 items: ['All', 'Node', 'PHP', 'Go'],
                 active: "All"
             }
-        }
+        },
+        show: true
     }
 
     async componentWillMount() {
-        let {data} = await api.get('projects');
-        console.log('data:',data);
-        
-        this.setState({projects: data});
+        await this.props.ProjectsStore!.fetch()
     }
 
     generateWorkCards() {
-        return this.state.projects.map(project=> {
+        return this.props.ProjectsStore!.projects.map(project=> {
             if (this.state.filters.backend.active === "All" || project.technologies.includes(this.state.filters.backend.active)) {
                 return (
                     <Col lg={4} md={6} xs={12} key={project.name}>
@@ -80,6 +85,13 @@ class MyWork extends React.Component<Props, State> {
                         </FlipMove>
                     </Row>
                 </Container>
+                <Modal
+        show={this.state.show}
+        dialogClassName="custom-modal"
+        aria-labelledby="example-custom-modal-styling-title"
+      >
+          <SingleProject></SingleProject>
+      </Modal>
             </section>
         )
     }

@@ -1,12 +1,6 @@
 import React from 'react'
 import './WorkCard.scss'
-
-export interface Project {
-    name: string
-    technologies: string[]
-    images: string[]
-    title_image: string
-}
+import {Project} from '../../stores/Projects';
 
 interface Props {
     project: Project

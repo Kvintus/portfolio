@@ -99,6 +99,7 @@ function getProjects() {
         $technologiesList = array_map(function ($id) {return getProjectName((int)$id);}, $project->technologies);
         if (!$technologiesList) $technologiesList = [];
         return [
+            'slug' => $project->post_name,
             'name' => $project->post_title,
             'description' => $project->description,
             'title_image' => wp_get_attachment_url($project->title_image),
@@ -107,6 +108,11 @@ function getProjects() {
             'technologies' => $technologiesList
         ];
     }, $projects);;
+}
+
+function getProject($data) {
+    var_dump($data);
+    $project = acf_get_post([]);
 }
 
 add_action('rest_api_init', function () {
@@ -139,6 +145,11 @@ add_action('rest_api_init', function () {
     register_rest_route('wp/v2', 'section/(?P<type>[\w-]+)', array(
         'methods'  => 'GET',
         'callback' => 'getSection'
+    ));
+    
+    register_rest_route('wp/v2', 'project/(?P<id>[\w-]+)', array(
+        'methods'  => 'GET',
+        'callback' => 'getProject'
     ));
 
     
