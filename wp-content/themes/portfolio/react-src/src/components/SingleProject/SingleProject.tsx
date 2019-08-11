@@ -38,7 +38,7 @@ export class SingleProject extends Component<Props, State> {
             <div>
                 {/* Header Video */}
                 <div className="single-project-header">
-                    <iframe className="single-project-video" src="https://www.youtube.com/embed/xC8CGv1CyFk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe className="single-project-video" src="https://www.youtube.com/embed/xC8CGv1CyFk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe>
                 </div>
                 <div className="project-container">
                     <h1 className="project-heading">{this.state.project.name}</h1>
