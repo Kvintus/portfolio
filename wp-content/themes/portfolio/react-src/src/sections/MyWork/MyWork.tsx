@@ -1,68 +1,73 @@
-import React from 'react'
-import {Container, Row, Col, Button, Modal} from 'react-bootstrap'
-import {inject, observer} from 'mobx-react';
-import FlipMove from 'react-flip-move'
-import {api} from './../../api'
+import React from "react";
+import { Container, Row, Col, Button, Modal } from "react-bootstrap";
+import { inject, observer } from "mobx-react";
+import FlipMove from "react-flip-move";
+import { api } from "./../../api";
 
-import './MyWork.scss'
-import SectionInro from '../../components/SectionIntro/SectionIntro';
-import WorkCard from '../../components/WorkCard/WorkCard' 
-import {Project, ProjectsStore} from '../../stores/Projects';
-import Filter from '../../components/MyWork/Filter'
-import SingleProject from '../../components/SingleProject/SingleProject';
+import "./MyWork.scss";
+import SectionInro from "../../components/SectionIntro/SectionIntro";
+import WorkCard from "../../components/WorkCard/WorkCard";
+import { Project, ProjectsStore } from "../../stores/Projects";
+import Filter from "../../components/MyWork/Filter";
+import SingleProject from "../../components/SingleProject/SingleProject";
 
 interface Props {
-    className?: string
-    id?: string
-    ProjectsStore?: ProjectsStore
+    className?: string;
+    id?: string;
+    ProjectsStore?: ProjectsStore;
 }
 
 interface FilterType {
-    active: string
-    items: string[]
+    active: string;
+    items: string[];
 }
 
 interface State {
-    projects: Project[]
+    projects: Project[];
     filters: {
-        backend: FilterType
+        backend: FilterType;
         [key: string]: FilterType;
-    }
-    show: boolean
+    };
+    show: boolean;
 }
 
-@inject('ProjectsStore')
+@inject("ProjectsStore")
 @observer
 class MyWork extends React.Component<Props, State> {
     state: State = {
         projects: [],
         filters: {
             backend: {
-                items: ['All', 'Node', 'PHP', 'Go'],
+                items: ["All", "Node", "PHP", "Go"],
                 active: "All"
             }
         },
         show: true
-    }
+    };
 
     async componentWillMount() {
-        await this.props.ProjectsStore!.fetch()
+        await this.props.ProjectsStore!.fetch();
     }
 
     generateWorkCards() {
-        return this.props.ProjectsStore!.projects.map(project=> {
-            if (this.state.filters.backend.active === "All" || project.all_technologies.includes(this.state.filters.backend.active)) {
+        return this.props.ProjectsStore!.projects.map(project => {
+            if (
+                this.state.filters.backend.active === "All" ||
+                project.all_technologies.includes(
+                    this.state.filters.backend.active
+                )
+            ) {
                 return (
                     <Col lg={4} md={6} xs={12} key={project.name}>
-                        <WorkCard project={project}/>
+                        <WorkCard project={project} />
                     </Col>
-                )
+                );
             }
-        })
+        });
     }
 
     changeActiveFilter(side: string, filter: string) {
-        this.setState(state => (state.filters[side].active = filter, state))
+        this.setState(state => ((state.filters[side].active = filter), state));
     }
 
     render() {
@@ -75,8 +80,10 @@ class MyWork extends React.Component<Props, State> {
                 />
                 <Container>
                     <Filter
-                        technologies={this.state.filters.backend.items} 
-                        onChange={(filter) => this.changeActiveFilter('backend', filter)}
+                        technologies={this.state.filters.backend.items}
+                        onChange={filter =>
+                            this.changeActiveFilter("backend", filter)
+                        }
                         active={this.state.filters.backend.active}
                     />
                     <Row>
@@ -86,15 +93,15 @@ class MyWork extends React.Component<Props, State> {
                     </Row>
                 </Container>
                 <Modal
-        show={this.state.show}
-        dialogClassName="custom-modal"
-        aria-labelledby="example-custom-modal-styling-title"
-      >
-          <SingleProject></SingleProject>
-      </Modal>
+                    show={this.state.show}
+                    dialogClassName="custom-modal"
+                    aria-labelledby="example-custom-modal-styling-title"
+                >
+                    <SingleProject />
+                </Modal>
             </section>
-        )
+        );
     }
 }
 
-export default MyWork
+export default MyWork;
