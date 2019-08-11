@@ -51,7 +51,7 @@ class MyWork extends React.Component<Props, State> {
 
     generateWorkCards() {
         return this.props.ProjectsStore!.projects.map(project=> {
-            if (this.state.filters.backend.active === "All" || project.technologies.includes(this.state.filters.backend.active)) {
+            if (this.state.filters.backend.active === "All" || project.all_technologies.includes(this.state.filters.backend.active)) {
                 return (
                     <Col lg={4} md={6} xs={12} key={project.name}>
                         <WorkCard project={project}/>

@@ -2,14 +2,26 @@ import {observable, action, computed, toJS} from 'mobx'
 import {api} from '../api'
 import makeInspectable from 'mobx-devtools-mst'
 
+export interface Technology {
+    name: string
+    icon: string
+}
+
+export interface Technologies {
+    backend: Technology[],
+    frontend: Technology[],
+    other: Technology[]
+}
+
 export interface Project {
     name: string
     intro: string
     description: string
-    technologies: string[]
     images: string[]
     title_image: string
     slug: string
+    all_technologies: string[]
+    technologies: Technologies
 }
 
 export class ProjectsStore {
@@ -38,6 +50,6 @@ export class ProjectsStore {
     } 
 }
 
-const store = new ProjectsStore();
-makeInspectable(store);
-export default store;
+const projectStore = new ProjectsStore();
+makeInspectable(projectStore);
+export default projectStore;
