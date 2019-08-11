@@ -1,4 +1,4 @@
-.main-btn {
+.primary-btn {
     color: #fff;
     font-size: 14px;
     margin-top: 30px;
@@ -18,5 +18,29 @@
         background: #fff;
         border: none;
         box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px;
+    }
+}
+
+.secondary-btn {
+    color: #1461ff;
+    background: #fff;
+    font-size: 14px;
+    margin-top: 30px;
+    text-transform: capitalize;
+    padding: 23px 40px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+    line-height: 10px;
+    border: none;
+    border-radius: 30px;
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out 0s;
+     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 25px;
+
+     &:hover {
+        background-color: #1461ff;
+        color: #fff;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
     }
 }

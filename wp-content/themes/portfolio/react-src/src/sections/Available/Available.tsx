@@ -14,6 +14,7 @@ const Available = (props: any) => {
                     <Col lg={12} className="text-center">
                         <h3>Available Freelancer</h3>
                         <BasicButton
+                            type="secondary"
                             text="Contact Me"
                         ></BasicButton>
                     </Col>

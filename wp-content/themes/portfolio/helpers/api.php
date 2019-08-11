@@ -54,7 +54,8 @@ function getTestimonials() {
         return [
             'name' => $testimonial->post_title,
             'position' => $testimonial->position,
-            'image' => get_post((int)$testimonial->image)->guid,
+            'image' => wp_get_attachment_image_src((int)$testimonial->image)[0],
+            // 'test' => get_template_directory_uri(),
             'text' => $testimonial->text,
             'linkedin_url' => $testimonial->linkedin_url
         ];
@@ -88,6 +89,11 @@ function getImageUrls($project) {
     return $urls;
 }
 
+function getTechnology($id) {
+    $technology =  get_post($id);
+    return ['name' => $technology->post_title, 'icon' => wp_get_attachment_url($technology->icon)];
+}
+
 function getProjects() {
     $projects = acf_get_posts([
         'post_type' => 'project'
@@ -95,17 +101,32 @@ function getProjects() {
 
 
     return array_map(function ($project) {
-        $technologiesList = array_map(function ($id) {return getProjectName((int)$id);}, $project->technologies);
+        $backendTechnologies = array_map(function ($id) {return getTechnology((int)$id);}, $project->backend_technologies);
+        $frontendTechnologies = array_map(function ($id) {return getTechnology((int)$id);}, $project->frontend_technologies);
+        $otherTechnologies = array_map(function ($id) {return getTechnology((int)$id);}, $project->other_technologies);
+        // return [$backendTechnologies, $frontendTechnologies, $otherTechnologies];
         if (!$technologiesList) $technologiesList = [];
         return [
+            'slug' => $project->post_name,
             'name' => $project->post_title,
+            'intro' => $project->intro,
             'description' => $project->description,
-            'title_image' => get_post($project->title_image)->guid,
+            'title_image' => wp_get_attachment_url($project->title_image),
             'images' => getImageUrls($project),
             'video' => $project->video,
-            'technologies' => $technologiesList
+            'technologies' => [
+                'backend' => $backendTechnologies,
+                'frontend' => $frontendTechnologies,
+                'other' => $otherTechnologies
+            ],
+            'all_technologies' => array_map(function($technology) {return $technology['name'];}, array_merge($backendTechnologies, $frontendTechnologies, $otherTechnologies)),
         ];
     }, $projects);;
+}
+
+function getProject($data) {
+    var_dump($data);
+    $project = acf_get_post([]);
 }
 
 add_action('rest_api_init', function () {
@@ -138,6 +159,11 @@ add_action('rest_api_init', function () {
     register_rest_route('wp/v2', 'section/(?P<type>[\w-]+)', array(
         'methods'  => 'GET',
         'callback' => 'getSection'
+    ));
+    
+    register_rest_route('wp/v2', 'project/(?P<id>[\w-]+)', array(
+        'methods'  => 'GET',
+        'callback' => 'getProject'
     ));
 
     

@@ -20,6 +20,6 @@ export class SocialMediaStore {
     }
 }
 
-const store = new SocialMediaStore();
-makeInspectable(store);
-export default store;
+const mediaStore = new SocialMediaStore();
+makeInspectable(mediaStore);
+export default mediaStore;
