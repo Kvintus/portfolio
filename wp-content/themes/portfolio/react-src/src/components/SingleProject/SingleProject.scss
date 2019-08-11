@@ -29,3 +29,9 @@
         left: -26px;
     }
 }
+
+.project-sidebar {
+    @media screen and (max-width: 1200px) {
+        padding-top: 4rem;
+    }
+}

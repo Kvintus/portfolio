@@ -84,7 +84,7 @@ function getImageUrls($project) {
     if ($ids[0]) {
         foreach ($ids as $imageId) {
             array_push($urls, [
-                'full' => wp_get_attachment_url($imageId),
+                'src' => wp_get_attachment_url($imageId),
                 'thumbnail' => wp_get_attachment_image_url($imageId, 'medium')
             ]);
         } 

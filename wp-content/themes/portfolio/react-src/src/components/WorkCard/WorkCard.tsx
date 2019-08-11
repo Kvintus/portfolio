@@ -4,13 +4,14 @@ import {Project} from '../../stores/Projects';
 
 interface Props {
     project: Project
+    onClick?: CallableFunction
 }
 
 const WorkCard = (props: Props) => {
     let technologiesString = props.project.all_technologies.join(', ');
 
     return (
-        <div className="work-card">
+        <div className="work-card" onClick={() => {props.onClick()}}>
             <img src={props.project.title_image} alt=""/>
             <div className="overlay">
                 <div className="info full-width">

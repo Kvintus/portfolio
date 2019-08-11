@@ -42,7 +42,7 @@ class MyWork extends React.Component<Props, State> {
                 active: "All"
             }
         },
-        show: true
+        show: false
     };
 
     async componentWillMount() {
@@ -59,7 +59,10 @@ class MyWork extends React.Component<Props, State> {
             ) {
                 return (
                     <Col lg={4} md={6} xs={12} key={project.name}>
-                        <WorkCard project={project} />
+                        <WorkCard onClick={async () => {
+                            await this.props.ProjectsStore.changeCurrentProject(project.slug)
+                            this.setState({show: true})
+                        }} project={project} />
                     </Col>
                 );
             }
@@ -68,6 +71,10 @@ class MyWork extends React.Component<Props, State> {
 
     changeActiveFilter(side: string, filter: string) {
         this.setState(state => ((state.filters[side].active = filter), state));
+    }
+
+    closeModal() {
+        this.setState({show: false})
     }
 
     render() {
@@ -93,6 +100,7 @@ class MyWork extends React.Component<Props, State> {
                     </Row>
                 </Container>
                 <Modal
+                    onHide={() => {this.closeModal()}}
                     show={this.state.show}
                     dialogClassName="custom-modal"
                     aria-labelledby="example-custom-modal-styling-title"

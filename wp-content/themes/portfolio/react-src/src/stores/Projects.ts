@@ -14,7 +14,7 @@ export interface Technologies {
 }
 
 export interface Image  {
-    full: string
+    src: string
     thumbnail: string
 }
 
@@ -25,6 +25,7 @@ export interface Project {
     images: Image[]
     title_image: string
     slug: string
+    video: string
     all_technologies: string[]
     technologies: Technologies
 }
@@ -32,6 +33,12 @@ export interface Project {
 export class ProjectsStore {
     @observable projects: Project[] = []
     @observable fetching = false;
+    @observable currentProject = null;
+
+    @action changeCurrentProject = async (slug: string) => { 
+        let project = await this.getProject(slug);
+        this.currentProject = project
+    }
 
     @action fetch = async () => {
         this.fetching = true;
