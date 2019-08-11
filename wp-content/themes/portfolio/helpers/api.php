@@ -80,10 +80,13 @@ function getTimelineEvents() {
 
 function getImageUrls($project) {
     $urls = [];
-    $ids = explode(',', $project->gallery);
+    $ids = explode(',', $project->images);
     if ($ids[0]) {
         foreach ($ids as $imageId) {
-            array_push($urls, get_post($imageId)->guid);
+            array_push($urls, [
+                'full' => wp_get_attachment_url($imageId),
+                'thumbnail' => wp_get_attachment_image_url($imageId, 'medium')
+            ]);
         } 
     }
     return $urls;
@@ -91,7 +94,7 @@ function getImageUrls($project) {
 
 function getTechnology($id) {
     $technology =  get_post($id);
-    return ['name' => $technology->post_title, 'icon' => wp_get_attachment_url($technology->icon)];
+    return ['name' => $technology->post_title, 'icon' => wp_get_attachment_image_url($technology->icon), 'thumbnail'];
 }
 
 function getProjects() {
@@ -104,6 +107,7 @@ function getProjects() {
         $backendTechnologies = array_map(function ($id) {return getTechnology((int)$id);}, $project->backend_technologies);
         $frontendTechnologies = array_map(function ($id) {return getTechnology((int)$id);}, $project->frontend_technologies);
         $otherTechnologies = array_map(function ($id) {return getTechnology((int)$id);}, $project->other_technologies);
+        $allTechnologies = array_map(function($technology) {return $technology['name'];}, array_merge($backendTechnologies, $frontendTechnologies, $otherTechnologies));
         // return [$backendTechnologies, $frontendTechnologies, $otherTechnologies];
         if (!$technologiesList) $technologiesList = [];
         return [
@@ -119,7 +123,7 @@ function getProjects() {
                 'frontend' => $frontendTechnologies,
                 'other' => $otherTechnologies
             ],
-            'all_technologies' => array_map(function($technology) {return $technology['name'];}, array_merge($backendTechnologies, $frontendTechnologies, $otherTechnologies)),
+            'all_technologies' => $allTechnologies,
         ];
     }, $projects);;
 }

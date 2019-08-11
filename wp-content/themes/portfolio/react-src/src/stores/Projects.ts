@@ -13,11 +13,16 @@ export interface Technologies {
     other: Technology[]
 }
 
+export interface Image  {
+    full: string
+    thumbnail: string
+}
+
 export interface Project {
     name: string
     intro: string
     description: string
-    images: string[]
+    images: Image[]
     title_image: string
     slug: string
     all_technologies: string[]
