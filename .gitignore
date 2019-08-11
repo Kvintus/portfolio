@@ -21,3 +21,4 @@ wp-content/plugins/*
 .env
 
 **/node_modules
+wp-content/themes/portfolio/static
