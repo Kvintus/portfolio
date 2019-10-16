@@ -13,7 +13,7 @@ wp-content/wp-cache-config.php
 wp-content/plugins/hello.php
 wp-content/plugins/*
 
-/.htaccess
+# /.htaccess
 /license.txt
 /readme.html
 /sitemap.xml
@@ -21,3 +21,4 @@ wp-content/plugins/*
 .env
 
 **/node_modules
+wp-content/themes/portfolio/static

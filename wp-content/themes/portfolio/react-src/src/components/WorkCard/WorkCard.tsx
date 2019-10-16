@@ -1,27 +1,22 @@
 import React from 'react'
 import './WorkCard.scss'
-
-export interface Project {
-    name: string
-    technologies: string[]
-    images: string[]
-    title_image: string
-}
+import {Project} from '../../stores/Projects';
 
 interface Props {
     project: Project
+    onClick?: CallableFunction
 }
 
 const WorkCard = (props: Props) => {
-    let technologiesString = props.project.technologies ? props.project.technologies.join(', ') : '';
+    let technologiesString = props.project.all_technologies.join(', ');
 
     return (
-        <div className="work-card">
+        <div className="work-card" onClick={() => {props.onClick()}}>
             <img src={props.project.title_image} alt=""/>
             <div className="overlay">
                 <div className="info full-width">
-                    <p>{technologiesString}</p>
                     <h4>{props.project.name}</h4>
+                    <p>{technologiesString}</p>
                     <span className="icon">
                         <i className="fa fa-arrow-right"></i>
                     </span>

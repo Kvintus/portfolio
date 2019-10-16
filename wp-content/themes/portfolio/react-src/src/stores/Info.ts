@@ -16,6 +16,6 @@ export class InfoStore {
     }
 }
 
-const store = new InfoStore();
-makeInspectable(store);
-export default store;
+const infoStore = new InfoStore();
+makeInspectable(infoStore);
+export default infoStore;
