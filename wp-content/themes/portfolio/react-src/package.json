@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
-        "@devloco/react-scripts-wptheme": "2.1.5-wptheme-2.2.2",
+        "@devloco/react-scripts-wptheme": "3.4.1-wp.1",
         "@types/jest": "24.0.9",
         "@types/node": "11.9.6",
         "@types/react": "^16.8.6",
@@ -28,7 +28,7 @@
         "react-owl-carousel": "^2.3.1",
         "react-redux": "^6.0.1",
         "react-router-dom": "^5.0.1",
-        "react-scripts": "^2.1.5",
+        "react-scripts": "^5.0.1",
         "react-typeit": "^0.3.1-beta.1",
         "typeit": "^6.0.2",
         "typescript": "3.3.3333"
